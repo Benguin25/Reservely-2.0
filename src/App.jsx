@@ -7,7 +7,11 @@ function App() {
       <header className="header">
         <div className="container header-content">
           <div className="logo">Reservely</div>
-          <a href="/about" className="about-link">About the creators</a>
+          <nav className="nav-menu">
+            <a href="/about" className="nav-link">About</a>
+            <a href="/contact" className="nav-link">Contact</a>
+            <a href="/faqs" className="nav-link">FAQs</a>
+          </nav>
         </div>
       </header>
 
