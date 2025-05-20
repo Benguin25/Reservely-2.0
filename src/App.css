@@ -200,3 +200,237 @@
   font-size: 0.9rem;
   border-top: 1px solid rgba(100, 255, 218, 0.1);
 }
+
+/* Page Layouts */
+.page-container {
+  min-height: calc(100vh - 140px); /* Adjust for header and footer */
+  background: radial-gradient(circle at top, var(--secondary-bg) 0%, var(--primary-bg) 100%);
+  padding: 60px 20px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.content-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(17, 34, 64, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius);
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(2, 12, 27, 0.3);
+  border: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+.content-section h1 {
+  font-size: 3rem;
+  margin-bottom: 40px;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* About Page */
+.about-content section {
+  margin-bottom: 40px;
+}
+
+.about-content h2 {
+  color: var(--accent-blue);
+  margin-bottom: 20px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.team-member {
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius);
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+}
+
+.member-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  background: var(--accent-gradient);
+}
+
+/* Contact Page */
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.contact-methods {
+  margin-top: 30px;
+}
+
+.contact-method {
+  margin-bottom: 30px;
+}
+
+.contact-method h3 {
+  color: var(--accent-blue);
+  margin-bottom: 10px;
+}
+
+.contact-form {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: var(--border-radius);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--accent-blue);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  border-radius: var(--border-radius);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 2px rgba(100, 255, 218, 0.1);
+}
+
+/* FAQs Page */
+.faq-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius);
+  transition: transform 0.3s ease;
+}
+
+.faq-item:hover {
+  transform: translateX(10px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.faq-item h2 {
+  color: var(--accent-blue);
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+/* Page Transitions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .content-section {
+    padding: 20px;
+  }
+  
+  .content-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .header-content {
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .nav-menu {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-link {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .tagline {
+    font-size: 1.1rem;
+    padding: 0 20px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+  
+  .contact-form {
+    padding: 20px;
+  }
+}
+
+/* Additional Responsive Adjustments */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .content-section h1 {
+    font-size: 2rem;
+  }
+
+  .team-member {
+    padding: 15px;
+  }
+
+  .member-photo {
+    width: 100px;
+    height: 100px;
+  }
+}
