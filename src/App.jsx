@@ -6,6 +6,11 @@ import Contact from './components/Contact'
 import FAQs from './components/FAQs'
 import RestaurantSearch from './components/RestaurantSearch'
 import ReservationForm from './components/ReservationForm'
+import Login from './components/Login'
+import OwnerDashboard from './components/OwnerDashboard'
+import EditSeating from './components/EditSeating'
+import ManageRestaurant from './components/ManageRestaurant'
+import ViewReservations from './components/ViewReservations'
 
 function HomePage() {
   const navigate = useNavigate();
@@ -16,7 +21,12 @@ function HomePage() {
       <p className="tagline">Affordable reservation system for small businesses</p>
       
       <div className="cta-buttons">
-        <button className="btn btn-primary">I am a restaurant owner</button>
+        <button 
+          className="btn btn-primary"
+          onClick={() => navigate('/login')}
+        >
+          I am a restaurant owner
+        </button>
         <button 
           className="btn btn-secondary"
           onClick={() => navigate('/search')}
@@ -51,6 +61,11 @@ function App() {
             <Route path="/faqs" element={<FAQs />} />
             <Route path="/search" element={<RestaurantSearch />} />
             <Route path="/reserve/:restaurantId" element={<ReservationForm />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/owner-dashboard" element={<OwnerDashboard />} />
+            <Route path="/owner/seating" element={<EditSeating />} />
+            <Route path="/owner/manage" element={<ManageRestaurant />} />
+            <Route path="/owner/reservations" element={<ViewReservations />} />
           </Routes>
         </main>
 
