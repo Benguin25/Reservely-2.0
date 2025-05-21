@@ -109,7 +109,8 @@
   flex: 1;
   display: flex;
   justify-content: center;
-  padding: 20px 20px;  /* reduced from 40px or 60px */
+  align-items: center;
+  padding: 0 20px;
   background: radial-gradient(circle at top, var(--secondary-bg) 0%, var(--primary-bg) 100%);
 }
 
@@ -150,17 +151,18 @@
 
 .cta-buttons {
   display: flex;
-  gap: 30px;
+  gap: 20px;
   justify-content: center;
-  flex-wrap: wrap;
+  margin-top: 50px;
 }
 
 .btn {
   font-size: 1.1rem;
-  min-width: 220px;
-  padding: 15px 30px;
+  padding: 12px 30px;
+  min-width: 200px;
   position: relative;
   overflow: hidden;
+  border-radius: var(--border-radius);
 }
 
 .btn-primary {
