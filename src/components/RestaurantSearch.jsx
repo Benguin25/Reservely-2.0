@@ -1,6 +1,8 @@
 import React, { useState, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function RestaurantSearch() {
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   
   const [restaurants] = useState([
@@ -58,6 +60,10 @@ export default function RestaurantSearch() {
     setSearchQuery(e.target.value);
   };
 
+  const handleReserveClick = (restaurantId) => {
+    navigate(`/reserve/${restaurantId}`);
+  };
+
   return (
     <div className="page-container">
       <div className="content-section">
@@ -87,7 +93,12 @@ export default function RestaurantSearch() {
                 <div className="restaurant-address">📍 {restaurant.address}</div>
               </div>
               <div className="restaurant-actions">
-                <button className="btn btn-primary">Reserve Now</button>
+                <button 
+                  className="btn btn-primary"
+                  onClick={() => handleReserveClick(restaurant.id)}
+                >
+                  Reserve Now
+                </button>
               </div>
             </div>
           ))}

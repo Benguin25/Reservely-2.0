@@ -5,6 +5,7 @@ import About from './components/About'
 import Contact from './components/Contact'
 import FAQs from './components/FAQs'
 import RestaurantSearch from './components/RestaurantSearch'
+import ReservationForm from './components/ReservationForm'
 
 function HomePage() {
   const navigate = useNavigate();
@@ -49,6 +50,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/faqs" element={<FAQs />} />
             <Route path="/search" element={<RestaurantSearch />} />
+            <Route path="/reserve/:restaurantId" element={<ReservationForm />} />
           </Routes>
         </main>
 
