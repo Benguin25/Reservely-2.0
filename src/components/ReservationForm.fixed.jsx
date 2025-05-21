@@ -1,13 +1,10 @@
+// Fixed version of ReservationForm component
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 export default function ReservationForm() {
-  const { restaurantId } = useParam          <form onSubmit={handleSubmit} className="reservation-form" style={{ 
-            display: 'grid', 
-            gap: '30px', 
-            width: '100%',
-            padding: '0'
-          }}>  const [formData, setFormData] = useState({
+  const { restaurantId } = useParams();
+  const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
@@ -93,13 +90,13 @@ export default function ReservationForm() {
     };
     
     // Get existing reservations for this restaurant
-    const existingReservations = JSON.parse(localStorage.getItem(`reservations_${restaurantId}`) || '[]');
+    const existingReservations = JSON.parse(localStorage.getItem(\eservations_\\) || '[]');
     
     // Add the new reservation
     const updatedReservations = [...existingReservations, newReservation];
     
     // Save back to localStorage
-    localStorage.setItem(`reservations_${restaurantId}`, JSON.stringify(updatedReservations));
+    localStorage.setItem(\eservations_\\, JSON.stringify(updatedReservations));
     
     // Show success message
     alert('Reservation submitted successfully!');
@@ -173,23 +170,11 @@ export default function ReservationForm() {
             <p style={{ 
               color: 'var(--text-secondary)',
               fontSize: '1.3rem'
-            }}>📍 {restaurant.address}</p>
+            }}> {restaurant.address}</p>
           </div>
-        </div>        <div className="form-container" style={{ 
-          width: '800px',
-          margin: '0 auto',
-          padding: '40px',
-          background: 'rgba(255, 255, 255, 0.05)',
-          border: '1px solid rgba(100, 255, 218, 0.1)',
-          borderRadius: '16px',
-          boxSizing: 'border-box'
-        }}>
-          <form onSubmit={handleSubmit} className="reservation-form" style={{ 
-            display: 'grid', 
-            gap: '30px',
-            width: '100%',
-            padding: '0'
-          }}>
+        </div>
+        <div className="form-container">
+          <form onSubmit={handleSubmit} className="reservation-form">
             <div className="form-group" style={{ fontSize: '1.1rem' }}>
               <label htmlFor="name" style={{ marginBottom: '10px', display: 'block' }}>Full Name</label>
               <input
@@ -198,11 +183,7 @@ export default function ReservationForm() {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                required                style={{ 
-                  padding: '12px 16px', 
-                  fontSize: '1.1rem',
-                  width: '100%'
-                }}
+                required
               />
             </div>
 
@@ -215,12 +196,6 @@ export default function ReservationForm() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                style={{ 
-                  padding: '12px 16px', 
-                  fontSize: '1.1rem',
-                  width: '100%',
-                  
-                }}
               />
             </div>
 
@@ -233,12 +208,6 @@ export default function ReservationForm() {
                 value={formData.phone}
                 onChange={handleChange}
                 required
-                style={{ 
-                  padding: '12px 16px', 
-                  fontSize: '1.1rem',
-                  width: '100%',
-                  
-                }}
               />
             </div>
 
@@ -253,12 +222,6 @@ export default function ReservationForm() {
                   onChange={handleChange}
                   min={today}
                   required
-                  style={{ 
-                    padding: '12px 16px', 
-                    fontSize: '1.1rem',
-                    width: '100%',
-                    
-                  }}
                 />
               </div>
 
@@ -271,12 +234,6 @@ export default function ReservationForm() {
                   value={formData.time}
                   onChange={handleChange}
                   required
-                  style={{ 
-                    padding: '12px 16px', 
-                    fontSize: '1.1rem',
-                    width: '100%',
-                    
-                  }}
                 />
               </div>
             </div>
@@ -292,12 +249,6 @@ export default function ReservationForm() {
                 min="1"
                 max="20"
                 required
-                style={{ 
-                  padding: '12px 16px', 
-                  fontSize: '1.1rem',
-                  width: '100%',
-                  
-                }}
               />
             </div>
 
@@ -310,16 +261,8 @@ export default function ReservationForm() {
                 onChange={handleChange}
                 placeholder="Enter any special requests or dietary requirements..."
                 style={{ 
-                  padding: '12px 16px', 
-                  fontSize: '1.1rem',
-                  width: '100%',
-                  ,
                   minHeight: '120px',
-                  resize: 'vertical',
-                  background: 'rgba(255, 255, 255, 0.1)',
-                  border: '1px solid rgba(100, 255, 218, 0.2)',
-                  borderRadius: '4px',
-                  color: 'var(--text-primary)'
+                  resize: 'vertical'
                 }}
               />
             </div>
@@ -339,4 +282,3 @@ export default function ReservationForm() {
     </div>
   );
 }
-
