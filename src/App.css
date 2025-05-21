@@ -214,6 +214,7 @@
   margin: 0 auto;
   border-radius: var(--border-radius);
   padding: 20px 40px;  /* reduced top/bottom padding from 40px */
+  background: transparent;
 }
 
 .content-section h1 {
@@ -388,7 +389,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background: rgba(17, 34, 64, 0.4);
+  background: transparent;
   border-radius: var(--border-radius);
   border: 1px solid rgba(233, 144, 214, 0.1);
   transition: all 0.3s ease;
@@ -444,7 +445,7 @@
   text-align: center;
   padding: 40px;
   color: var(--text-secondary);
-  background: rgba(17, 34, 64, 0.4);
+  background: transparent;
   border-radius: var(--border-radius);
   font-size: 1.1rem;
   margin: 20px 0;
