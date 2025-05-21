@@ -427,6 +427,43 @@
   margin-left: 20px;
 }
 
+.search-results-count {
+  color: var(--text-secondary);
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.restaurant-cuisine {
+  color: var(--accent-pink);
+  font-size: 0.9rem;
+  margin: 5px 0;
+}
+
+.restaurant-rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.star {
+  font-size: 0.9rem;
+}
+
+.rating-number {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-left: 5px;
+}
+
+.no-results {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius);
+  font-size: 1.1rem;
+}
+
 /* Page Transitions */
 @keyframes fadeIn {
   from {
