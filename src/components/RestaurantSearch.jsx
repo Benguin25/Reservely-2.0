@@ -3,42 +3,41 @@ import React, { useState, useMemo } from 'react';
 export default function RestaurantSearch() {
   const [searchQuery, setSearchQuery] = useState('');
   
-  // Sample restaurant data (will be replaced with actual data later)
   const [restaurants] = useState([
     {
       id: 1,
       name: "La Bella Italia",
       description: "Authentic Italian cuisine in a cozy atmosphere. Known for homemade pasta and wood-fired pizzas.",
-      rating: 4.5,
-      cuisine: "Italian"
+      cuisine: "Italian",
+      address: "123 Main Street, Downtown, Toronto, ON M5V 2T6"
     },
     {
       id: 2,
       name: "Sushi Master",
       description: "Fresh sushi and Japanese delicacies. Traditional dining experience with modern twists.",
-      rating: 4.8,
-      cuisine: "Japanese"
+      cuisine: "Japanese",
+      address: "456 Queen Street West, Toronto, ON M5V 2B3"
     },
     {
       id: 3,
       name: "The Grill House",
       description: "Premium steaks and grilled specialties. Perfect for special occasions and business dinners.",
-      rating: 4.6,
-      cuisine: "Steakhouse"
+      cuisine: "Steakhouse",
+      address: "789 King Street East, Toronto, ON M5A 1N2"
     },
     {
       id: 4,
       name: "Thai Spice",
       description: "Authentic Thai flavors with a modern presentation. Famous for our Pad Thai and curry dishes.",
-      rating: 4.7,
-      cuisine: "Thai"
+      cuisine: "Thai",
+      address: "321 Yonge Street, Toronto, ON M5B 1R8"
     },
     {
       id: 5,
       name: "Mediterranean Delight",
       description: "Fresh Mediterranean dishes featuring homemade hummus, falafel, and grilled specialties.",
-      rating: 4.4,
-      cuisine: "Mediterranean"
+      cuisine: "Mediterranean",
+      address: "567 College Street, Toronto, ON M6G 1B2"
     }
   ]);
 
@@ -50,7 +49,8 @@ export default function RestaurantSearch() {
     return restaurants.filter(restaurant => 
       restaurant.name.toLowerCase().includes(query) ||
       restaurant.description.toLowerCase().includes(query) ||
-      restaurant.cuisine.toLowerCase().includes(query)
+      restaurant.cuisine.toLowerCase().includes(query) ||
+      restaurant.address.toLowerCase().includes(query)
     );
   }, [restaurants, searchQuery]);
 
@@ -68,7 +68,7 @@ export default function RestaurantSearch() {
               type="text"
               value={searchQuery}
               onChange={handleSearchChange}
-              placeholder="Search by restaurant name, cuisine, or description..."
+              placeholder="Search by restaurant name, cuisine, or location..."
               className="search-input"
             />
           </div>
@@ -84,12 +84,7 @@ export default function RestaurantSearch() {
                 <h2>{restaurant.name}</h2>
                 <div className="restaurant-cuisine">{restaurant.cuisine}</div>
                 <p>{restaurant.description}</p>
-                <div className="restaurant-rating">
-                  {[...Array(Math.floor(restaurant.rating))].map((_, i) => (
-                    <span key={i} className="star">⭐</span>
-                  ))}
-                  <span className="rating-number">({restaurant.rating})</span>
-                </div>
+                <div className="restaurant-address">📍 {restaurant.address}</div>
               </div>
               <div className="restaurant-actions">
                 <button className="btn btn-primary">Reserve Now</button>

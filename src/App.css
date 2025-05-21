@@ -211,13 +211,10 @@
 
 .content-section {
   max-width: 1200px;
+  width: 1200px;
   margin: 0 auto;
-  background: rgba(17, 34, 64, 0.6);
-  backdrop-filter: blur(10px);
   border-radius: var(--border-radius);
   padding: 40px;
-  box-shadow: 0 20px 40px rgba(2, 12, 27, 0.3);
-  border: 1px solid rgba(100, 255, 218, 0.1);
 }
 
 .content-section h1 {
@@ -350,23 +347,24 @@
 .search-section {
   text-align: center;
   margin-bottom: 40px;
+  width: 100%;
 }
 
 .search-form {
-  display: flex;
-  gap: 15px;
-  max-width: 600px;
+  width: 800px;
   margin: 30px auto;
 }
 
 .search-input {
-  flex: 1;
+  width: 100%;
+  height: 50px;
   padding: 12px 20px;
   border: 2px solid var(--accent-purple);
   border-radius: var(--border-radius);
   background: rgba(255, 255, 255, 0.1);
   color: var(--text-primary);
   font-size: 1.1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .search-input:focus {
@@ -391,7 +389,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(17, 34, 64, 0.4);
   border-radius: var(--border-radius);
   border: 1px solid rgba(233, 144, 214, 0.1);
   transition: all 0.3s ease;
@@ -419,8 +417,7 @@
 }
 
 .restaurant-rating {
-  color: var(--accent-pink);
-  font-weight: 500;
+  display: none;
 }
 
 .restaurant-actions {
@@ -439,29 +436,28 @@
   margin: 5px 0;
 }
 
-.restaurant-rating {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.star {
-  font-size: 0.9rem;
-}
-
-.rating-number {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  margin-left: 5px;
+.star, .rating-number {
+  display: none;
 }
 
 .no-results {
+  width: 100%;
   text-align: center;
   padding: 40px;
   color: var(--text-secondary);
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(17, 34, 64, 0.4);
   border-radius: var(--border-radius);
   font-size: 1.1rem;
+  margin: 20px 0;
+}
+
+.restaurant-address {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 /* Page Transitions */
@@ -533,7 +529,8 @@
   }
 
   .search-form {
-    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
     padding: 0 20px;
   }
 
@@ -565,5 +562,19 @@
   .member-photo {
     width: 100px;
     height: 100px;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1300px) {
+  .content-section {
+    width: 95%;
+    max-width: 95%;
+    padding: 20px;
+  }
+
+  .search-form {
+    width: 90%;
+    max-width: 800px;
   }
 }
