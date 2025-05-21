@@ -109,8 +109,7 @@
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 60px 20px;
+  padding: 20px 20px;  /* reduced from 40px or 60px */
   background: radial-gradient(circle at top, var(--secondary-bg) 0%, var(--primary-bg) 100%);
 }
 
@@ -214,7 +213,7 @@
   width: 1200px;
   margin: 0 auto;
   border-radius: var(--border-radius);
-  padding: 40px;
+  padding: 20px 40px;  /* reduced top/bottom padding from 40px */
 }
 
 .content-section h1 {
@@ -346,13 +345,13 @@
 /* Restaurant Search Page */
 .search-section {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 30px;  /* reduced from 40px */
   width: 100%;
 }
 
 .search-form {
   width: 800px;
-  margin: 30px auto;
+  margin: 20px auto;  /* reduced from 30px */
 }
 
 .search-input {
