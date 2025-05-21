@@ -117,6 +117,7 @@ export default function EditSeating() {
                           type="text"
                           value={table.name}
                           onChange={(e) => updateTable(table.id, 'name', e.target.value)}
+                          className="styled-input"
                         />
                       </td>
                       <td>
@@ -125,6 +126,7 @@ export default function EditSeating() {
                           min="1"
                           value={table.capacity}
                           onChange={(e) => updateTable(table.id, 'capacity', e.target.value)}
+                          className="styled-input"
                         />
                       </td>
                       <td>
@@ -154,6 +156,7 @@ export default function EditSeating() {
                   value={newTable.name}
                   onChange={handleNewTableChange}
                   placeholder="e.g., Table 4"
+                  className="styled-input"
                 />
               </div>
               
@@ -166,15 +169,18 @@ export default function EditSeating() {
                   min="1"
                   value={newTable.capacity}
                   onChange={handleNewTableChange}
+                  className="styled-input"
                 />
               </div>
               
-              <button 
-                className="btn btn-primary"
-                onClick={addTable}
-              >
-                Add Table
-              </button>
+              <div className="form-group form-button-group">
+                <button 
+                  className="btn btn-primary"
+                  onClick={addTable}
+                >
+                  Add Table
+                </button>
+              </div>
             </div>
           </div>
           

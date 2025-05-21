@@ -101,16 +101,9 @@ export default function OwnerDashboard() {
         <div className="dashboard-header">
           <h1>Restaurant Owner Dashboard</h1>
           <div className="user-controls">
-            <span>Welcome, {localStorage.getItem('userEmail')}</span>
+            <h2>{restaurant.name}</h2>
             <button className="btn btn-secondary" onClick={handleLogout}>Logout</button>
           </div>
-        </div>
-        
-        <div className="restaurant-overview">
-          <h2>{restaurant.name}</h2>
-          <p>{restaurant.description}</p>
-          <p><strong>Cuisine:</strong> {restaurant.cuisine}</p>
-          <p><strong>Address:</strong> {restaurant.address}</p>
         </div>
         
         <div className="dashboard-link">
@@ -128,6 +121,13 @@ export default function OwnerDashboard() {
             </button>
           </div>
           <p>Share this link with your customers to allow them to make reservations at your restaurant.</p>
+        </div>
+        
+        <div className="restaurant-overview">
+          <h2>{restaurant.name}</h2>
+          <p>{restaurant.description}</p>
+          <p><strong>Cuisine:</strong> {restaurant.cuisine}</p>
+          <p><strong>Address:</strong> {restaurant.address}</p>
         </div>
         
         <div className="dashboard-actions">

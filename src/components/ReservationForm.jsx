@@ -84,7 +84,7 @@ export default function ReservationForm() {
     const newReservation = {
       id: Date.now(), // Use timestamp as id
       ...formData,
-      status: 'pending', // New reservations are pending by default
+      status: 'confirmed', // All reservations are automatically confirmed
       restaurantId: parseInt(restaurantId)
     };
     
@@ -98,7 +98,7 @@ export default function ReservationForm() {
     localStorage.setItem(`reservations_${restaurantId}`, JSON.stringify(updatedReservations));
     
     // Show success message
-    alert('Reservation submitted successfully! The restaurant will confirm your reservation shortly.');
+    alert('Reservation submitted successfully!');
     
     // Clear form
     setFormData({

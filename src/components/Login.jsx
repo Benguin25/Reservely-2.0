@@ -8,7 +8,8 @@ export default function Login() {
     email: '',
     password: '',
     confirmPassword: '',
-    restaurantName: ''
+    restaurantName: '',
+    phoneNumber: ''
   });
   const [error, setError] = useState('');
 
@@ -53,6 +54,7 @@ export default function Login() {
       const newRestaurant = {
         id: parseInt(newRestaurantId),
         name: formData.restaurantName,
+        phoneNumber: formData.phoneNumber,
         description: "New restaurant on Reservely",
         cuisine: "Various",
         address: "Please update your restaurant details"
@@ -121,6 +123,19 @@ export default function Login() {
                     name="restaurantName"
                     value={formData.restaurantName}
                     onChange={handleChange}
+                    required
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="phoneNumber">Phone Number</label>
+                  <input
+                    type="tel"
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    value={formData.phoneNumber}
+                    onChange={handleChange}
+                    placeholder="e.g., 555-123-4567"
                     required
                   />
                 </div>

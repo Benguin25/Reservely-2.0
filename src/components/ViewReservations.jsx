@@ -69,7 +69,7 @@ export default function ViewReservations() {
           time: '18:00',
           partySize: 6,
           specialNotes: '',
-          status: 'pending',
+          status: 'confirmed',
           table: 'Table 3'
         }
       ];
@@ -132,12 +132,6 @@ export default function ViewReservations() {
             All
           </button>
           <button 
-            className={`filter-btn ${filterStatus === 'pending' ? 'active' : ''}`}
-            onClick={() => setFilterStatus('pending')}
-          >
-            Pending
-          </button>
-          <button 
             className={`filter-btn ${filterStatus === 'confirmed' ? 'active' : ''}`}
             onClick={() => setFilterStatus('confirmed')}
           >
@@ -182,15 +176,6 @@ export default function ViewReservations() {
                 </div>
                 
                 <div className="reservation-actions">
-                  {reservation.status === 'pending' && (
-                    <button 
-                      className="btn btn-primary"
-                      onClick={() => updateReservationStatus(reservation.id, 'confirmed')}
-                    >
-                      Confirm
-                    </button>
-                  )}
-                  
                   {reservation.status !== 'cancelled' && (
                     <button 
                       className="btn btn-secondary"
